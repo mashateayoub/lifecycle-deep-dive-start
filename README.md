@@ -19,8 +19,13 @@ These lifecycle hooks can be used to perform a wide range of tasks such as setti
 
 ### During Initialization
 
-![init.png](init.png)
+![init.png](./public/init.png)
 
 ### Updates 
 
-![update.png](update.png)
+![update.png](./public/update.png)
+
+
+## Angular.io Summary 
+
+![summary.png](./public/summary.png)
