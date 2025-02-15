@@ -1,27 +1,26 @@
-# CmpDeepDive
+## Lifecycle Hooks
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0-next.2.
+The component lifecycle hooks are methods that are called at different points in a component's life. These methods can be used to perform a wide range of tasks such as setting up and tearing down resources, performing initialization and cleanup, and responding to changes in the component's inputs.
 
-## Development server
+Here is an overview of the component lifecycle hooks and when they are called:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **ngOnChanges()**: When the component's inputs change, the ngOnChanges() lifecycle hook is called. This hook is called after the default change detector checks the component's inputs and finds that one or more of them have changed.
+- **ngOnInit()**: After the constructor, the ngOnInit() lifecycle hook is called. This hook is called after the first ngOnChanges(), and is called only once.
+- **ngDoCheck()**: Called during every change detection run, immediately after ngOnChanges() and ngOnInit(). Use this hook to implement custom change detection when Angular's default change detection doesn't catch the changes you need to act on.
+- **ngAfterContentInit()**: After the component's content has been fully initialized, the ngAfterContentInit() lifecycle hook is called. This hook is called after the component's content has been projected into the component's view.
+- **ngAfterContentChecked()**: Called after ngAfterContentInit() and every subsequent ngDoCheck(). This hook is useful when you need to do something after Angular checks the content projected into the component.
+- **ngAfterViewInit()**: After the component's view has been fully initialized, the ngAfterViewInit() lifecycle hook is called. This hook is called after the component's view has been fully initialized and after the ngAfterContentInit() hook has been called.
+- **ngAfterViewChecked()**: After the component's view has been fully initialized and after the ngAfterViewInit() lifecycle hook has been called, the ngAfterViewChecked() lifecycle hook is called. This hook is called after every change detector check, and is called repeatedly.
+- **ngOnDestroy()**: When the component is destroyed, the ngOnDestroy() lifecycle hook is called. This hook is called before the component is destroyed and is called only once.
 
-## Code scaffolding
+These lifecycle hooks can be used to perform a wide range of tasks such as setting up and tearing down resources, performing initialization and cleanup, and responding to changes in the component's inputs.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Execution Order
 
-## Build
+### During Initialization
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![init.png](init.png)
 
-## Running unit tests
+### Updates 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![update.png](update.png)
